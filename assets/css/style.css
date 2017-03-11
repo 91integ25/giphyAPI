@@ -1,0 +1,25 @@
+body{
+	background-image: url(bmw-m3-e92-burnout.jpg);
+	background-color: red;
+	background-size: cover;
+}
+h1{
+	text-align:center;
+	color:#fff;
+}
+form{
+	display: flex;
+	justify-content: center;
+
+}
+input{
+	margin:.5em;
+}
+button{
+	margin:.5em;
+	border-radius: 5%;
+	background-color: #add8e6;
+}
+p{
+	color:#fff;
+}
