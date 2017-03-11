@@ -41,6 +41,7 @@ $("#addCar").on("click", function (){
 
 // makes ajax call to the API and displays the gifs
 $("body").on("click",'.mycar', function (){
+
 	$("#carGifs").empty();
 	var userSearch = $(this).text();
 	var queryUrl = "https://api.giphy.com/v1/gifs/search?q="+ userSearch + "&rating&limit=10&api_key=dc6zaTOxFJmzC";
@@ -54,22 +55,27 @@ $.ajax({
 	// creates gifs and ratings
 	for(var i = 0; i < response.data.length;i++){
 	var gifDiv = $("<div>");
+	
+
 	var rating= $("<p>").text("Rating: " + response.data[i].rating);
+	var gifUrl = response.data[i].images.fixed_height.url;
+	var stillImage = response.data[i].images.fixed_height_still.url;
+
+	
 	var gifSrc = $("<img>").attr({
 		"src": gifUrl,
 		 "data-animate": gifUrl,
 		 "data-still": stillImage,
 		 "data-state": "still"
 		});
-	var gifUrl = response.data[i].images.fixed_height.url;
-	var stillImage = response.data[i].images.fixed_height_still.url;
+	
 	
 	$(gifSrc).addClass("carGif");
 	$(gifDiv).prepend(gifSrc);
 	$(gifDiv).append(rating);
-	$(gifDiv).css({"float":"left","margin":"1em"})
+	$(gifDiv).css({"float":"left","margin":"10px"})
 	$("#carGifs").append(gifDiv);
-	console.log(response.data[i].rating);
+	console.log(response.data[0].images.fixed_height.url);
 
 }
 
