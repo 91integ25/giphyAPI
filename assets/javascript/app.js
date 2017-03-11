@@ -43,7 +43,7 @@ $("#addCar").on("click", function (){
 $("body").on("click",'.mycar', function (){
 	$("#carGifs").empty();
 	var userSearch = $(this).text();
-	var queryUrl = "http://api.giphy.com/v1/gifs/search?q="+ userSearch + "&rating&limit=10&api_key=dc6zaTOxFJmzC";
+	var queryUrl = "https://api.giphy.com/v1/gifs/search?q="+ userSearch + "&rating&limit=10&api_key=dc6zaTOxFJmzC";
 	
 
 $.ajax({
